@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/loginStyle.css">
+    <title>Edit</title>
+</head>
+
+<body>
+
+
+<div class="login">
+    <div class="head">
+        <h1 class="siteName">Factory Site</h1>
+    </div>
+
+    <p class="msg">Update employee</p>
+
+    <div class="form">
+        <form th:action="@{/employees_list/update/{id}(id=${employee.id})}" th:object="${employee}" method="post">
+            <label>Change Name</label>
+            <input type="text" th:field="*{name}" placeholder="Change Name" class="firstname" required/>
+            <label>Change Salary</label>
+            <input type="text" th:field="*{salary}" placeholder="Change Salary" class="lastname" required/>
+            <label>Change contractId</label>
+            <input type="text" th:field="*{contractId}" placeholder="Change contractId" class="email" required/>
+            <label>Change General Furlough</label>
+            <input type="number" th:field="*{generalFurlough}" placeholder="Change General Furlough" class="email"
+                   min="0" max="20" step="1" required/>
+            <label>Change Furlough</label>
+            <input type="number" th:field="*{usedFurlough}" placeholder="Change Furlough" class="email" min="0" max="20"
+                   step="1" required/>
+            <button type="submit" class="btn-login">Update</button>
+            <a class="notMember" href="/employees_list">back to page</a>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
+
+
+

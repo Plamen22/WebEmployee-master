@@ -1,0 +1,146 @@
+body {
+    height: 250px;
+    width: 250px;
+    margin: auto;
+    background: #ABCDEF;
+    display: flex;
+    min-height: 90vh;
+}
+.login {
+    background: #267871;
+    border-radius: 10px;
+    color: white;
+    margin: auto;
+    padding: 25px 25px;
+    box-shadow:
+        0px 2px 10px rgba(0, 0, 0, 0.2),
+        0px 10px 20px rgba(0, 0, 0, 0.2),
+        0px 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 250;
+    height: 150;
+}
+
+.username {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    width: 100%;
+    box-shadow: 0px 2px 0px white;
+}
+.firstname {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0px 2px 0px white;
+}
+.lastname {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0px 2px 0px white;
+}
+
+.day {
+    background: grey;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-shadow: 0px 2px 0px white;
+    color:black;
+}
+
+.email {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0px 2px 0px white;
+}
+
+.username::placeholder {
+    color: #D3D3D3;
+}
+
+.password {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0px 2px 0px white;
+}
+
+.password::placeholder {
+    color: #D3D3D3;
+}
+
+.btn-login {
+    background: none;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0px 0px 0px 2px white;
+    text-decoration: none;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.btn-login:hover {
+    background: white;
+    color: dimgray;
+    transition: 0.2s;
+}
+
+.btn-login a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-login a:hover {
+    color: rgb(171, 167, 167);
+    transition: 0.2s;
+}
+
+.notMember {
+    text-decoration: none;
+    color: white;
+    float: right;
+    margin-left: 20px;
+
+}
+
+.notMember:hover {
+    color: rgb(171, 167, 167);
+    transition: 0.2s;
+}

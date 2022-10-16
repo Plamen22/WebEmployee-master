@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/loginStyle.css">
+    <title>Create</title>
+</head>
+
+<body>
+
+<div class="login">
+    <div class="head">
+        <h1 class="siteName">Factory Site</h1>
+    </div>
+
+    <p class="msg">Create employee</p>
+
+    <div class="form">
+        <form th:action="@{/employees_list}" th:object="${employee}" method="post">
+            <label>Enter Name</label>
+            <input type="text" th:field="*{name}" placeholder="Enter Name" class="firstname" required/>
+            <label>Enter Salary</label>
+            <input type="text" th:field="*{salary}" placeholder="Enter Salary" class="lastname" required/>
+            <label>Enter contractId</label>
+            <input type="text" th:field="*{contractId}" placeholder="Enter contractId" class="email" required/>
+            <label>Enter General Furlough</label>
+            <input type="number" th:field="*{generalFurlough}" placeholder="Enter General Furlough" class="lastname"
+                   min="0" max="20" step="1" required/>
+            <button type="submit" class="btn-login">Create</button>
+            <a class="notMember" href="/employees_list">back to page</a>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
+
+
+

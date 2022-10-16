@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/homeStyle.css">
+    <link rel="stylesheet" href="/css/activeButtonStyle.css">
+    <link rel="stylesheet" href="/css/tableStyle.css">
+    <title>Home</title>
+</head>
+
+<script type="text/javascript">
+function display_c(){
+var refresh=1000; // Refresh rate in milli seconds
+myTime=setTimeout('display_ct()',refresh)
+}
+
+function display_ct() {
+var x = new Date()
+document.getElementById('ct').innerHTML = x;
+display_c();
+ }
+
+</script>
+
+<body onload=display_ct();>
+<div class="header">
+    <a href="#" class="active">Home</a>
+    <a href="/employees_list">Employees List</a>
+    <a href="/worker_schedule">Worker Schedule</a>
+    <a href="/external_orders">External Orders</a>
+    <a href="/users">User List</a>
+    <form th:action="@{/logout}" method="post">
+
+        Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+
+        <input class="btn-info" type="submit" value="Sign Out"/>
+    </form>
+</div>
+
+<div class="add-employee"><h1><span id='ct'></span></h1></div>
+
+<div class="table_center">
+
+    <div class="customBox">
+        <div class="boxHeader">History of Factory</div>
+        <div class="boxContent">
+
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    My Factory Site CopyRight
+</div>
+
+</body>
+
+</html>

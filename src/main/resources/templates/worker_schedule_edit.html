@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/loginStyle.css">
+    <title>Edit</title>
+</head>
+
+<body>
+
+
+<div class="login">
+    <div class="head">
+        <h1 class="siteName">Factory Site</h1>
+    </div>
+
+    <p class="msg" th:text="${workerSchedule.employee.name}">Update schedule</p>
+
+    <div class="form">
+        <form th:action="@{/worker_schedule/update/{id}(id=${workerSchedule.id})}"
+              th:object="${workerSchedule}" method="post">
+
+                <label>Monday</label>
+                <select class="day" th:field="*{monday}">
+                    <option value="on work">on work</option>
+                    <option value="rest">rest</option>
+                    <option value="sick">sick</option>
+                    <option value="furlough">furlough</option>
+                    <option value="motherhood">motherhood</option>
+                </select>
+
+            <label>Tuesday</label>
+            <select class="day" th:field="*{tuesday}">
+                <option value="on work">on work</option>
+                <option value="rest">rest</option>
+                <option value="sick">sick</option>
+                <option value="furlough">furlough</option>
+                <option value="motherhood">motherhood</option>
+            </select>
+
+            <label>Wednesday</label>
+            <select class="day" th:field="*{wednesday}">
+                <option value="on work">on work</option>
+                <option value="rest">rest</option>
+                <option value="sick">sick</option>
+                <option value="furlough">furlough</option>
+                <option value="motherhood">motherhood</option>
+            </select>
+
+            <label>Thursday</label>
+            <select class="day" th:field="*{thursday}">
+                <option value="on work">on work</option>
+                <option value="rest">rest</option>
+                <option value="sick">sick</option>
+                <option value="furlough">furlough</option>
+                <option value="motherhood">motherhood</option>
+            </select>
+
+            <label>Friday</label>
+            <select class="day" th:field="*{friday}">
+                <option value="on work">on work</option>
+                <option value="rest">rest</option>
+                <option value="sick">sick</option>
+                <option value="furlough">furlough</option>
+                <option value="motherhood">motherhood</option>
+            </select>
+
+            <label>Saturday</label>
+            <select class="day" th:field="*{saturday}">
+                <option value="on work">on work</option>
+                <option value="rest">rest</option>
+                <option value="sick">sick</option>
+                <option value="furlough">furlough</option>
+                <option value="motherhood">motherhood</option>
+            </select>
+
+            <label>Sunday</label>
+            <select class="day" th:field="*{sunday}">
+                <option value="on work">on work</option>
+                <option value="rest">rest</option>
+                <option value="sick">sick</option>
+                <option value="furlough">furlough</option>
+                <option value="motherhood">motherhood</option>
+            </select>
+
+<!--            <input  type="hidden"  class="day" th:field="*{employee.id}"/>-->
+
+            <button type="submit" class="btn-login">Update</button>
+            <a class="notMember" href="/worker_schedule">back to page</a>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

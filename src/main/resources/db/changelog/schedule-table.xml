@@ -1,0 +1,36 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Plamen" id="webProject">
+
+        <createTable tableName="schedule">
+
+            <column name="id" type="int(11)" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="monday" type="varchar(255)" />
+            <column name="tuesday" type="varchar(255)" />
+            <column name="wednesday" type="varchar(255)" />
+            <column name="thursday" type="varchar(255)" />
+            <column name="friday" type="varchar(255)" />
+            <column name="saturday" type="varchar(255)" />
+            <column name="sunday" type="varchar(255)" />
+
+            <column name="employee" type="int(11)" />
+        </createTable>
+        <addForeignKeyConstraint baseTableName="schedule"
+                                 baseColumnNames="employee"
+                                 constraintName="worker"
+                                 referencedTableName="employees1"
+                                 referencedColumnNames="id"
+                                 onDelete="CASCADE"/>
+    </changeSet>
+
+</databaseChangeLog>

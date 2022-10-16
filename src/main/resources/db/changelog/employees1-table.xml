@@ -1,0 +1,33 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Plamen" id="webProject">
+
+<createTable tableName="employees1">
+
+    <column name="id" type="int(11)" autoIncrement="true">
+        <constraints primaryKey="true" nullable="false"/>
+    </column>
+
+    <column name="name" type="varchar(255)" />
+    <column name="contract_Id" type="int(10)" />
+    <column name="salary" type="double(10)" />
+
+    <column name="created_At"  defaultValueComputed="CURRENT_TIMESTAMP" type="TIMESTAMP" >
+        <constraints  nullable="false"/>
+    </column>
+
+    <column name="general_furlough" type="int(10)" />
+    <column name="remaining_furlough" type="int(10)" />
+    <column name="used_furlough" type="int(10)" />
+
+</createTable>
+    </changeSet>
+
+</databaseChangeLog>

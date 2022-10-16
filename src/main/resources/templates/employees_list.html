@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/homeStyle.css">
+    <link rel="stylesheet" href="/css/activeButtonStyle.css">
+    <link rel="stylesheet" href="/css/tableStyle.css">
+    <title>Employees List</title>
+</head>
+
+<script type="text/javascript">
+function display_c(){
+var refresh=1000; // Refresh rate in milli seconds
+myTime=setTimeout('display_ct()',refresh)
+}
+
+function display_ct() {
+var x = new Date()
+document.getElementById('ct').innerHTML = x;
+display_c();
+ }
+
+</script>
+
+<body onload=display_ct();>
+<div class="header">
+    <a href="/home">Home</a>
+    <a href="#" class="active">Employees List</a>
+    <a href="/worker_schedule">Worker Schedule</a>
+    <a href="/external_orders">External Orders</a>
+    <a href="/users">User List</a>
+    <form th:action="@{/logout}" method="post">
+
+        Welcome <b>[[${#request.userPrincipal.principal.fullName}]]</b>
+
+        <input class="btn-info" type="submit" value="Sign Out"/>
+    </form>
+</div>
+
+<div class="add-employee"><h1><span id='ct'></span></h1></div>
+
+<div class="add-employee"><a href="/employees_list/create">
+    <button class="btn-add">Add an employee</button>
+</a>
+</div>
+
+<div class="add-employee">
+    <input class="input" type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+</div>
+
+<div class="table_center">
+    <div class="outer">
+    <table id="myTable" th:if="${employees1.size() >= 0}">
+        <thead>
+        <tr>
+            <th> Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Contract id</th>
+            <th>Created at</th>
+            <th>General Furlough</th>
+            <th>Remaining Furlough</th>
+            <th>Used Furlough</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="employee : ${employees1}">
+            <td th:text="${employee.id}"></td>
+            <td th:text="${employee.name}"></td>
+            <td th:text="${employee.salary}"></td>
+            <td th:text="${employee.contractId}"></td>
+            <td th:text="${employee.createdAt}"></td>
+            <td th:text="${employee.generalFurlough}"></td>
+            <td th:text="${employee.remainingFurlough}"></td>
+            <td th:text="${employee.usedFurlough}"></td>
+            <td><a th:href="@{'/employees_list/' + ${employee.id}}">
+                <button class="btn-info">Edit</button>
+            </a></td>
+            <td><a th:href="@{'/employees_list/delete/' + ${employee.id}}">
+                <button class="btn-danger">Delete</button>
+            </a></td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+<script>
+function myFunction(){
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td") ;
+    for(j=0 ; j<td.length ; j++)
+    {
+      let tdata = td[j] ;
+      if (tdata) {
+        if (tdata.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+          break ;
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+}
+
+</script>
+
+
+<div class="footer">
+    My Factory Site CopyRight
+</div>
+
+</body>
+
+</html>

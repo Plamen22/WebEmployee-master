@@ -1,0 +1,73 @@
+body {
+    background-color: #ABCDEF;
+    margin: 0;
+}
+
+.header {
+    top: 0;
+    position: sticky;
+    background-color: rgb(57, 57, 57);
+    height: 45px;
+}
+
+.header a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+
+.header form {
+    float: right;
+       color: white;
+        text-align: center;
+        padding: 15px 20px;
+        text-decoration: none;
+}
+
+.mainContent {
+    display: inline-flex;
+    flex-direction: center;
+    position: absolute;
+    top: 20%;
+    left: 15%;
+}
+
+.footer {
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.customBox {
+    height: 250px;
+    width: 250px;
+    border-radius: 10px;
+    background: #267871;
+    color: white;
+    padding: 15px;
+    margin: 15px;
+}
+
+.boxHeader {
+    text-align: center;
+}
+
+.boxContent {
+    text-align: justify;
+}
+
+.input {
+  background-image: url('https://www.w3schools.com/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 20%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}

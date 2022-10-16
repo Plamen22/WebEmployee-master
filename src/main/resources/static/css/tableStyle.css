@@ -1,0 +1,86 @@
+table {
+  border-collapse: collapse;
+  width: align;
+}
+td, th {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 8px;
+}
+ tr:nth-child(even){
+ background-color: #f2f2f2;
+ }
+
+tr:hover {
+background-color: #ddd;
+}
+
+ th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #267871;
+  color: white;
+  }
+
+.btn-info {
+  border-radius: 5px;
+  color:#fff;
+  background-color:#17a2b8;
+  border-color:#17a2b8
+  height: align;
+  width: align;
+  cursor: pointer;
+
+}
+
+.btn-add {
+   border-radius: 5px;
+   font-family: "Times New Roman", Times, serif;
+   font-size: 25px;
+   height: 35px;
+   width: 200px;
+   color:#fff;
+   background-color:#17a2b8;
+   border-color:#17a2b8
+}
+
+.btn-danger{
+   border-radius: 5px;
+   color:#fff;
+   background-color:#dc3545;
+   border-color:#dc3545
+   cursor: pointer;
+   height: align;
+   width: align;
+   cursor: pointer;
+}
+
+.add-employee {
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table_center{
+    margin: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  .outer {
+    overflow-y: auto;
+    height: 200px;
+  }
+
+  .outer {
+    width: align;
+    -layout: fixed;
+  }
+
+  .outer th {
+    text-align: center;
+    top: 0;
+    position: sticky;
+  }

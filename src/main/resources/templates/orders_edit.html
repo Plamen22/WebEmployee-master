@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/loginStyle.css">
+    <title>Edit</title>
+</head>
+
+<body>
+
+
+<div class="login">
+    <div class="head">
+        <h1 class="siteName">Factory Site</h1>
+    </div>
+
+    <p class="msg">Update order</p>
+
+    <div class="form">
+        <form th:action="@{/external_orders/update/{id}(id=${externalOrders.id})}" th:object="${externalOrders}" method="post">
+
+            <label>Change Name</label>
+            <input type="text" th:field="*{name}" placeholder="Change Name" class="firstname" required/>
+
+            <label>Change Employee</label>
+            <select class="lastname" th:field="*{employee.id}">
+                <option th:each="i : ${employees1}" th:value="${i.id}" th:text="${i.name}"  style="color:#267871;">
+                </option>
+            </select>
+            <button type="submit" class="btn-login">Update</button>
+            <a class="notMember" href="/external_orders">back to page</a>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
